@@ -9,6 +9,8 @@ import HomeScreen from './HomeScreen';  // Assuming you have a HomeScreen compon
 import AboutUsScreen from './AboutUsScreen'; // About Us screen
 import UserAccountScreen from './UserAccountScreen'; // Settings screen
 
+import LoginScreen from './LoginScreen';
+
 // Create stack and tab navigators
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -52,10 +54,11 @@ const TabNavigator = () => {
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={TabNavigator} />
-        <Stack.Screen name="About" component={AboutUsScreen} />
-        <Stack.Screen name="Settings" component={UserAccountScreen} />
+      <Stack.Navigator initialRouteName="Login">
+        <Stack.Screen name='Login' component={LoginScreen} options={{ headerShown: false }}/>
+        <Stack.Screen name="Home" component={TabNavigator} options={{ headerShown: false }}/>
+        <Stack.Screen name="About" component={AboutUsScreen} options={{ headerShown: false }}/>
+        <Stack.Screen name="Settings" component={UserAccountScreen} options={{ headerShown: false }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
