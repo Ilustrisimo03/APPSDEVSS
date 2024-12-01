@@ -18,7 +18,7 @@ const SignUpScreen = ({ navigation }) => {
     return (
 
         <ImageBackground
-            source={require('./assets/Image/bg2_weather.png')} // Path to your bg_weather.png image
+            source={require('./assets/Image/bg_weather.png')} // Path to your bg_weather.png image
             style={styles.container}
         >
         <View style={styles.container}>
@@ -73,21 +73,24 @@ const SignUpScreen = ({ navigation }) => {
                     <View style={styles.line}></View>
                 </View>
 
+                 {/* Social Button */}
                 <View style={styles.socialButtonContainer}>
-                 
+                    {/* Facebook Button */}
                     <TouchableOpacity style={styles.socialButton}>
                         <Image
-                            source={require('./assets/Facebook-Icon.png')} 
-                            style={styles.socialIcon}
+                            source={require('./assets/Image/FB.png')} // Custom Facebook icon
+                            style={[styles.socialIcon, {width: 33, height: 33}]} // Set fixed width and height
+                            resizeMode="contain" // Ensures the image doesn't stretch or distort
                         />
                         <Text style={styles.socialButtonText}>Facebook</Text>
                     </TouchableOpacity>
 
-                   
+                    {/* Google Button */}
                     <TouchableOpacity style={styles.socialButton}>
                         <Image
-                            source={require('./assets/Google-Icon.png')}
-                            style={styles.socialIcon}
+                            source={require('./assets/Image/GOOGLEE.png')} // Custom Google icon
+                            style={[styles.socialIcon, {width: 30, height: 30   }]} // Set fixed width and height
+                            resizeMode="contain" // Ensures the image doesn't stretch or distort
                         />
                         <Text style={styles.socialButtonText}>Google</Text>
                     </TouchableOpacity>
@@ -130,28 +133,28 @@ const styles = StyleSheet.create({
 
     headings: {
         fontSize: 30,
-        color: '#000000',
+        color: '#fff',
         fontWeight: 700,
     },
 
     subheadings:{
-        color: '#000000',
+        color: '#fff',
         fontSize: 13,
         marginBottom: 50,
     },
 
     label: {
-        color: '#000000',
+        color: '#fff',
         fontWeight: 600,
     },
 
     signin: {
-        color: 'Black',
+        color: '#fff',
     },
 
     signinBlue: {
         fontWeight: 'bold',
-        color: '#2F96F4',
+        color: '#022341',
     },
 
     formContainer: {
@@ -205,13 +208,15 @@ const styles = StyleSheet.create({
     },
     line: {
         height: 1,
-        backgroundColor: '#000000',
+        backgroundColor: '#fff',
+        opacity: .5,
         flex: 1, 
         marginHorizontal: 10, 
     },
     loginWithText: {
         fontSize: 12,
-        color: '#000000', 
+        color: '#fff', 
+        opacity: .5,
         fontWeight: 'bold',
         
     },
@@ -219,25 +224,27 @@ const styles = StyleSheet.create({
    // New styles for the social buttons
     socialButtonContainer: {
         flexDirection: 'row',
-        justifyContent: 'space-between', 
+        justifyContent: 'space-between',
         marginTop: 10,
     },
     socialButton: {
         flexDirection: 'row',
-        backgroundColor: '#FFFFFF', 
+        height: 45, // Height of the button
+        backgroundColor: '#FFFFFF',
         paddingVertical: 10,
         paddingHorizontal: 15,
-        height: 45,
         borderRadius: 5,
-        alignItems: 'center',
         top: 50,
+        alignItems: 'center',
         justifyContent: 'center',
-        width: '48%', 
-
-        elevation: 5, //Add a shadow
+        width: '48%', // Button width
+        elevation: 5, // Shadow effect
     },
-    socialButtonText: { color: '#000000', marginLeft: 10, fontSize: 14 },
 
+    socialButtonText: {
+        color: '#000000',
+        fontSize: 14,
+    }
 });
 
 export default SignUpScreen;

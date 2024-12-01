@@ -1,10 +1,11 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image, ImageBackground, Dimensions } from 'react-native';
 
+
 const LoadingScreen = ({ navigation }) => {
   return (
     <ImageBackground
-      source={require('./assets/Image/bg2_weather.png')} // Path to your bg_weather.png image
+      source={require('./assets/Image/bg_weather.png')} // Path to your bg_weather.png image
       style={styles.imageBackground}
     >
       <View style={styles.container}>

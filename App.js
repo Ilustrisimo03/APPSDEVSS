@@ -11,6 +11,7 @@ import UserAccountScreen from './UserAccountScreen';
 import SignUpScreen from './SignUpScreen';
 import LoginScreen from './LoginScreen';
 import LoadingScreen from './LoadingScreen'; // Import LoadingScreen
+import EditProfile from './EditProfile';
 
 // Create stack and tab navigators
 const Stack = createStackNavigator();
@@ -22,9 +23,13 @@ const TabNavigator = () => {
     <Tab.Navigator
       screenOptions={{
         tabBarStyle: {
-          backgroundColor: '#2B71B1', // Tab bar background color
+          backgroundColor: '#fff', // Tab bar background color
           justifyContent: 'center',
-          borderRadius:60,
+           
+           // Create an upward curve (concave curve effect)
+           borderBottomLeftRadius: 30, // Curve the left side upwards
+           borderBottomRightRadius: 30, // Curve the right side upwards
+         
           height: 60,
           width: '100%', // Adjust width to center
           alignSelf: 'center', // Center the tab bar horizontally
@@ -35,18 +40,27 @@ const TabNavigator = () => {
           textAlign: 'center', // Center the label
           fontSize: 12, // Smaller font size for tab labels
           fontWeight: 'bold', // Make tab label text bold
-          tintColor: '#fff', // White color for text
-          marginBottom: 5, // Space between the icon and the label
+          tintColor: '#000', // White color for text
+          
         },
         tabBarIconStyle: {
-          width: 24, // Set fixed width for the icons
-          height: 24, // Set fixed height for the icons
-          tintColor: '#fff', // White color for icons
+          width: 30, // Set fixed width for the icons
+          height: 30, // Set fixed height for the icons
+          tintColor: '#000', // White color for icons
+          top:5,
         },
-        tabBarActiveTintColor: '#fff', // Active tab icon and label color
-        tabBarInactiveTintColor: '#A0B0C0', // Inactive tab icon and label color
+        tabBarActiveTintColor: '#2F96F4', // Active tab icon and label color
+        tabBarInactiveTintColor: 'gray', // Inactive tab icon and label color
+       
         tabBarShowLabel: true, // Show the label under the icons
+
+        // Add background color when the tab is active
+      
+        tabBarInactiveBackgroundColor: '#fff', // White background for inactive tabs
+        
       }}
+
+      
     >
       <Tab.Screen
         name="Home"
@@ -101,7 +115,9 @@ const App = () => {
           component={LoginScreen}
           options={{ headerShown: false }}
         />
+         
         {/* Main Application Screens */}
+       
         <Stack.Screen
           name="Home"
           component={TabNavigator} // Use the TabNavigator for main app flow
@@ -115,6 +131,11 @@ const App = () => {
         <Stack.Screen
           name="My Account"
           component={UserAccountScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Edit Profile"
+          component={EditProfile} // Use the TabNavigator for main app flow
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

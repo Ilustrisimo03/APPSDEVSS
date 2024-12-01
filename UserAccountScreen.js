@@ -1,9 +1,13 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity, ImageBackground } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 const UserAccountScreen = ({ navigation }) => {
   return (
+    <ImageBackground
+            source={require('./assets/Image/bg_weather.png')} // Path to your bg_weather.png image
+            style={styles.container}
+        >
     <View style={styles.container}>
       {/* Profile Image */}
       <Image
@@ -18,9 +22,9 @@ const UserAccountScreen = ({ navigation }) => {
         {/* Edit Profile Button */}
         <TouchableOpacity
           style={styles.editProfileButton}
-          onPress={() => navigation.navigate('EditProfile')}
+          onPress={() => navigation.navigate('Edit Profile')}
         >
-          <Icon name="edit" size={20} color="white" />
+          <Icon name="edit" size={20} color="#296093" />
           <Text style={styles.editProfileButtonText}> Edit Profile</Text>
         </TouchableOpacity>
       </View>
@@ -29,13 +33,13 @@ const UserAccountScreen = ({ navigation }) => {
       <View style={styles.buttonContainer}>
         {/* Home Button */}
         <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
-          <Icon name="home" size={24} color="#2F96F4" />
+          <Icon name="home" size={24} color="#fff" />
           <Text style={styles.buttonText}>Home</Text>
         </TouchableOpacity>
 
         {/* About Button */}
         <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('About Us')}>
-          <Icon name="dataset" size={24} color="#2F96F4" />
+          <Icon name="dataset" size={24} color="#fff" />
           <Text style={styles.buttonText}>About</Text>
         </TouchableOpacity>
 
@@ -46,6 +50,7 @@ const UserAccountScreen = ({ navigation }) => {
         </TouchableOpacity>
       </View>
     </View>
+    </ImageBackground>
   );
 };
 
@@ -54,7 +59,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#f0f4f8',
     padding: 20,
   },
   profileImage: {
@@ -62,17 +66,22 @@ const styles = StyleSheet.create({
     height: 80,
     borderRadius: 150, // Circular image
     bottom: 100,
-    borderWidth: 2,
-    borderColor: '#ddd', // Light border for the image
+  
+   
   },
   profileContainer: {
     alignItems: 'center',
     bottom: 100,
   },
-
+  profileInfo: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#fff',
+    marginBottom: 8,
+  },
   // Style for the Edit Profile Button
   editProfileButton: {
-    backgroundColor: '#2F96F4', // Button background color
+    backgroundColor: '#fff', // Button background color
     height: 40, // Button height
     width: 180, // Width of the button
     borderRadius: 15, // Rounded corners for the button
@@ -80,26 +89,26 @@ const styles = StyleSheet.create({
     justifyContent: 'center', // Center the text vertically
     alignItems: 'center', // Center the text horizontally
     flexDirection: 'row', // Align icon and text in a row
+    shadowColor: '#000',        
+    shadowOffset: { width: 0, height: 10 },
+    shadowOpacity: 0.15,
+    shadowRadius: 20,
+    elevation: 10,  
   },
   editProfileButtonText: {
-    color: 'white', // Text color
+    color: '#296093', // Text color
     fontSize: 16,
     fontWeight: 'bold',
   },
 
-  profileInfo: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: '#555',
-    marginBottom: 8,
-  },
+  
   buttonContainer: {
     width: '100%',
   },
   button: {
-    backgroundColor: 'rgba(10, 10, 60, 0.1)', // Transparent button background
+    backgroundColor: '#296093', // Transparent button background
     height: 60,
-    width: '100%', // Make the button stretch across the screen
+    width: '120%', // Make the button stretch across the screen
     paddingHorizontal: 20, // Horizontal padding to make it wider
     borderRadius: 5, // Rounded corners
     marginBottom: 10, // Space between buttons
@@ -109,7 +118,7 @@ const styles = StyleSheet.create({
   },
   
   buttonText: {
-    color: 'black', // Button text color
+    color: '#fff', // Button text color
     fontSize: 16,
     fontWeight: 'bold',
     marginLeft: 10, // Space between icon and text

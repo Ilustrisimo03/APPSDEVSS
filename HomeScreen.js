@@ -3,9 +3,10 @@ import { View, Text, TouchableOpacity, StyleSheet, Image, ScrollView, ImageBackg
 import Icon from 'react-native-vector-icons/Ionicons'; // For using icons
 
 const HomeScreen = ({ navigation }) => {
+  
   return (
     <ImageBackground
-      source={require('./assets/Image/bg2_weather.png')} // Path to your bg_weather.png image
+      source={require('./assets/Image/bg_weather.png')} // Path to your bg_weather.png image
             style={styles.container}
     >
     <View style={styles.container}>
@@ -103,12 +104,13 @@ const styles = StyleSheet.create({
   headerTitle: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#eeeee',
+    color: '#fff',
     textAlign: 'center',
   },
   subTitle: {
     fontSize: 14,
-    color: 'gray',
+    color: '#fff',
+    opacity: .8,
     textAlign: 'center',
   },
   content: {
@@ -118,14 +120,18 @@ const styles = StyleSheet.create({
   weatherInfoSection: {
     width: '100%',
     height: 'auto',
-    backgroundColor: 'rgba(10, 10, 60, 0.1)', 
-    borderRadius: 15, 
-    flexDirection: 'row', 
-    alignItems: 'center', 
-    justifyContent: 'flex-start', 
-    padding: 15, 
-    marginBottom: 30,
-  
+    backgroundColor: '#296093', 
+    borderRadius: 15,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    padding: 5,
+    marginBottom: 30, 
+    shadowColor: '#000',        
+    shadowOffset: { width: 0, height: 10 },
+    shadowOpacity: 0.15,
+    shadowRadius: 20,
+    elevation: 5,      
   },
 
   Imagesun:{
@@ -163,7 +169,7 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#333',
+    color: '#fff',
     padding:10,
     
   },
@@ -175,11 +181,15 @@ const styles = StyleSheet.create({
   forecastCard: {
     height: 150,
     alignItems: 'center',
-    backgroundColor: 'rgba(10, 10, 60, 0.1)', 
+    backgroundColor: '#fff', 
     padding: 10,
     borderRadius: 10,
     flex: 1,
     marginHorizontal: 5,
+    elevation: 4, 
+    shadowColor: '#000', 
+    shadowOpacity: 0.1, 
+    shadowRadius: 4, 
   },
   forecastText: {
     fontSize: 14,
@@ -202,7 +212,7 @@ const styles = StyleSheet.create({
   weatherheading: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#333',
+    color: '#fff',
     marginBottom: 10,
   },
 
