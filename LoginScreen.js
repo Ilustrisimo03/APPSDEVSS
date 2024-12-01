@@ -198,6 +198,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row', 
         alignItems: 'center', 
         marginVertical: 10, 
+        top: 40,
     },
     line: {
         height: 1,
@@ -209,6 +210,7 @@ const styles = StyleSheet.create({
         fontSize: 12,
         color: '#000000', 
         fontWeight: 'bold',
+        
     },
 
    // New styles for the social buttons
@@ -219,13 +221,14 @@ const styles = StyleSheet.create({
     },
     socialButton: {
         flexDirection: 'row',
+        height: 45,
         backgroundColor: '#FFFFFF', 
         paddingVertical: 10,
         paddingHorizontal: 15,
        
         borderRadius: 5,
         alignItems: 'center',
-        marginBottom: 10,
+        top: 80,
         justifyContent: 'center',
         width: '48%', 
 
