@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { View, TextInput, TouchableOpacity, Text, StyleSheet, Image, ImageBackground } from 'react-native';
-
+import Icon from 'react-native-vector-icons/MaterialIcons'; // Import MaterialIcons
 
 const SignUpScreen = ({ navigation }) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [showPassword, setShowPassword] = useState(false); // State for toggling password visibility
     
 
     const handleLogin = () => {
@@ -13,6 +14,10 @@ const SignUpScreen = ({ navigation }) => {
 
     const handleSignUp = () => {
         navigation.navigate('Login'); // Navigate to Sign Up screen
+    };
+
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword); // Toggle the state for password visibility
     };
 
     return (
@@ -51,15 +56,23 @@ const SignUpScreen = ({ navigation }) => {
                 />
 
                 <Text style={styles.label}>Password</Text>
-
-                <TextInput
-                    placeholder="Enter your password"
-                    value={password}
-                    onChangeText={setPassword}
-                    secureTextEntry
-                    style={[styles.input]}
-                    placeholderTextColor="#AFAFAF" 
-                />
+                    <View style={styles.passwordContainer}>
+                        <TextInput
+                            placeholder="Enter your password"
+                            value={password}
+                            onChangeText={setPassword}
+                            secureTextEntry={!showPassword} // Toggle password visibility
+                            style={[styles.input, { paddingRight: 40 }]} // Add padding for the icon
+                            placeholderTextColor="#AFAFAF"
+                        />
+                        <TouchableOpacity onPress={togglePasswordVisibility} style={styles.eyeIconContainer}>
+                            <Icon
+                                name={showPassword ? 'visibility' : 'visibility-off'}
+                                size={24}
+                                color="#AFAFAF"
+                            />
+                        </TouchableOpacity>
+                    </View>
                
 
                 <TouchableOpacity style={styles.button} onPress={handleLogin}>
@@ -140,7 +153,7 @@ const styles = StyleSheet.create({
     subheadings:{
         color: '#fff',
         fontSize: 13,
-        marginBottom: 50,
+        marginBottom: 80,
     },
 
     label: {
@@ -173,6 +186,17 @@ const styles = StyleSheet.create({
         paddingHorizontal: 8,
         borderRadius: 10,
         backgroundColor: '#FFFFFF',
+    },
+
+    passwordContainer: {
+        position: 'relative',
+    },
+
+    eyeIconContainer: {
+        position: 'absolute',
+        right: 10,
+        top: 6,
+        padding: 5,
     },
 
 
