@@ -34,54 +34,43 @@ const HomeScreen = ({ navigation }) => {
           
           </View>
         </View>
+              
 
-              {/* Forecast Section */}
-              <View style={styles.forecastSection}>
-                <Text style={styles.sectionTitle}>Forecast</Text>
-                <View style={styles.forecastRow}>
-                  <View style={styles.forecastCard}>
-                    
-                    <Text style={styles.forecastText}></Text>
-                    <Text style={styles.forecastTemp}></Text>
+
+             {/* Weather Section */}
+              <View style={styles.weatherContainer}>
+                <Text style={styles.weatherheading}>Weather</Text>
+                <View style={styles.itemRow}>
+                  <View style={styles.Weather_box}>
+                    <Icon name="water" size={24} color="#00bcd4" style={styles.Icon} />
+                    <Text style={styles.dayLabel}>Humidity</Text>
+                    <View style={styles.verticalLine}>
+                      </View> 
+                    <Text style={styles.temperature}>69%</Text>
                   </View>
-                  <View style={styles.forecastCard}>
-                    
-                    <Text style={styles.forecastText}></Text>
-                    <Text style={styles.forecastTemp}></Text>
+
+                  <View style={styles.Weather_box}>
+                    <Icon name="thermometer" size={24} color="#FF4649" style={styles.Icon} />
+                    <Text style={styles.dayLabel}>Temperature</Text>
+                    <View style={styles.verticalLine}>
+
+                    </View>
+                    <Text style={styles.temperature}>69°C</Text>
                   </View>
-                  <View style={styles.forecastCard}>
-                    
-                    <Text style={styles.forecastText}></Text>
-                    <Text style={styles.forecastTemp}></Text>
+                  
+                  <View style={styles.Weather_box}>
+                    <Icon name="cloud" size={24} color="#2F96F4" style={styles.Icon} />
+                    <Text style={styles.dayLabel}>Air Quality</Text>
+                    <View style={styles.verticalLine}>
+                      </View> 
+                    <Text style={styles.temperature}>69°C</Text>
                   </View>
+                  
                 </View>
+                
               </View>
 
 
-                {/* Weather Section */}
-                <View style={styles.weatherContainer}>
-                  <Text style={styles.weatherheading}>Weather</Text>
-                  <View style={styles.itemRow}>
-                    <View style={styles.Weather_box}>
-                    <Icon name="water" size={24} color="#00bcd4" style={styles.Icon} />
-                      <Text style={styles.dayLabel}>Humadity</Text>
-                      <Text style={styles.temperature}>69%</Text>
-                    </View>
-                    <View style={styles.Weather_box}>
-                      <Text style={styles.dayLabel}></Text>
-                      <Text style={styles.temperature}></Text>
-                    </View>
-                    <View style={styles.Weather_box}>
-                    <Icon name="thermometer" size={24} color="#00bcd4" style={styles.Icon} />
-                      <Text style={styles.dayLabel}>Temperature</Text>
-                      <Text style={styles.temperature}>69°C</Text>
-                    </View>
-                    <View style={styles.Weather_box}>
-                      <Text style={styles.dayLabel}></Text>
-                      <Text style={styles.temperature}></Text>
-                    </View>
-                  </View>
-                </View>
 
        
       </ScrollView>
@@ -95,7 +84,7 @@ const HomeScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    margin: 'auto',
+
   },
   header: {
     alignItems: 'center',
@@ -160,97 +149,74 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginLeft: 100,
   },
-  forecastSection: {
-    marginBottom: 30,
-  },
+ 
+ // Flexbox container for the weather section
+weatherContainer: {
+  paddingHorizontal: 15,
+  marginBottom: 10,
+  flex: 1,
+},
 
+// Heading for the weather section
+weatherheading: {
+  fontSize: 18,
+  fontWeight: 'bold',
+  color: '#fff',
+  textAlign: 'center',
+  marginBottom: 10,
+},
 
-  //FORECAST SECTION
-  sectionTitle: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: '#fff',
-    padding:10,
-    
-  },
-  forecastRow: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
+// Flexbox container for the weather items in a row
+itemRow: {
+  flexDirection: 'column',  // Layout items in a row
+  justifyContent: 'space-between', // Distribute items with space between them
+  alignItems: 'center', // Center align vertically
+  flexWrap: 'wrap',  // Allow items to wrap if necessary
+}, 
 
-  forecastCard: {
-    height: 150,
-    alignItems: 'center',
-    backgroundColor: '#fff', 
-    padding: 10,
-    borderRadius: 10,
-    flex: 1,
-    marginHorizontal: 5,
-    elevation: 4, 
-    shadowColor: '#000', 
-    shadowOpacity: 0.1, 
-    shadowRadius: 4, 
-  },
-  forecastText: {
-    fontSize: 14,
-    fontWeight: 'bold',
-    color: '#333',
-  },
-  forecastTemp: {
-    fontSize: 16,
-    color: '#333',
-  },
-  
+// Box for individual weather information
+Weather_box: {
+  flexDirection: 'row',  // Layout items horizontally in a row
+  width: '100%',  // Adjust width to allow items to fit side by side
+  height: '80',
+  backgroundColor: '#f9f9f9',
+  padding: 20,
+  borderRadius: 8,
+  alignItems: 'center',  // Center items vertically
+  marginBottom: 10,
+  elevation: 4,
+  shadowColor: '#000',
+  shadowOpacity: 0.1,
+  shadowRadius: 4,
+  marginHorizontal: 0,
+  marginVertical: 5,
+},
 
-  // Container for the entire weather section
-  weatherContainer: {
-    padding: 10,
-    marginBottom: 10,
-  },
+// Day label text styling
+dayLabel: {
+  fontSize: 16,
+  fontWeight: '600',
+  color: '#333',
 
-  // Heading for the weather section
-  weatherheading: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: '#fff',
-    marginBottom: 10,
-  },
+  textAlign: 'center',
+  marginLeft: 10,  // Add some space between icon and label
+},
 
-  // Flexbox container for the weather items in rows
-  itemRow: {
-    flexDirection: 'row',
-    flexWrap: 'wrap', 
-    justifyContent: 'space-between',
-  },
+// Icon styling
+Icon: {
+  fontSize: 35,
+  marginRight: 35,  // Space between icon and label
+},
 
-  // Box for individual day weather information
-  Weather_box: {
-    width: '48%', 
-    backgroundColor: '#f9f9f9',
-    padding: 10,
-    borderRadius: 8,
-    alignItems: 'center',
-    marginBottom: 10,
-    elevation: 4, 
-    shadowColor: '#000', 
-    shadowOpacity: 0.1, 
-    shadowRadius: 4, 
-  },
+// Temperature text styling
+temperature: {
+  fontSize: 18,
+  fontWeight: 'bold',
+  color: '#e94e77',
+  textAlign: 'right',  // Align temperature to the right
+  flex: 1,  // Allow the temperature text to take up the remaining space
+},
 
-  // Day label text styling
-  dayLabel: {
-    fontSize: 16,
-    fontWeight: '600',
-    color: '#333',
-  },
-
-  // Temperature text styling
-  temperature: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: '#e94e77', 
-    marginTop: 5,
-  },
 
 });
 

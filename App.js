@@ -42,15 +42,17 @@ const TabNavigator = () => {
           fontWeight: 'bold', // Make tab label text bold
           tintColor: '#000', // White color for text
           
+          
         },
         tabBarIconStyle: {
           width: 30, // Set fixed width for the icons
           height: 30, // Set fixed height for the icons
           tintColor: '#000', // White color for icons
           top:5,
+        
         },
         tabBarActiveTintColor: '#2F96F4', // Active tab icon and label color
-        tabBarInactiveTintColor: 'gray', // Inactive tab icon and label color
+        tabBarInactiveTintColor: '#585B60', // Inactive tab icon and label color
        
         tabBarShowLabel: true, // Show the label under the icons
 
