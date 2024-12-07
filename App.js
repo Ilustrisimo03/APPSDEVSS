@@ -25,11 +25,6 @@ const TabNavigator = () => {
         tabBarStyle: {
           backgroundColor: '#fff', // Tab bar background color
           justifyContent: 'center',
-           
-           // Create an upward curve (concave curve effect)
-           borderBottomLeftRadius: 30, // Curve the left side upwards
-           borderBottomRightRadius: 30, // Curve the right side upwards
-         
           height: 60,
           width: '100%', // Adjust width to center
           alignSelf: 'center', // Center the tab bar horizontally
@@ -49,7 +44,6 @@ const TabNavigator = () => {
           height: 30, // Set fixed height for the icons
           tintColor: '#000', // White color for icons
           top:5,
-        
         },
         tabBarActiveTintColor: '#2F96F4', // Active tab icon and label color
         tabBarInactiveTintColor: '#585B60', // Inactive tab icon and label color

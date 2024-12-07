@@ -6,82 +6,72 @@ const teamMembers = [
   { 
     id: 1, 
     name: 'Genga, John Irvin C.', 
-    role: 'Leader/ Developer.', 
-    assignPart: 'UI/UX Principles', 
+    assignPart: 'PROJECT MANAGER/FRONT END', 
     paragraph: 'A message is a communication or statement that is sent from one person or group to another. Messages can be sent verbally, in writing, or through a gesture or look. When sent electronically, a message is sent via a computer or device like a cell phone. The person who sends the message is called the sender, and the person who receives it is called the receiver.-', 
     image: require('./assets/Image/Geanga.png') 
   },
   { 
     id: 2, 
     name: 'Dinolan, Angerl O.', 
-    role: 'Assistant Designer.', 
-    assignPart: 'UI/UX Principles', 
+    assignPart: 'QUALITY ASSURANCE', 
     paragraph: 'A message is a communication or statement that is sent from one person or group to another. Messages can be sent verbally, in writing, or through a gesture or look. When sent electronically, a message is sent via a computer or device like a cell phone. The person who sends the message is called the sender, and the person who receives it is called the receiver.-', 
     image: require('./assets/Image/Dinolan.png') 
   },
   { 
     id: 3, 
     name: 'Laison, Sean Michael Angelo', 
-    role: 'Tester.', 
-    assignPart: 'UI/UX Principles', 
+    assignPart: 'SECURITY ASSURANCE .', 
     paragraph: 'A message is a communication or statement that is sent from one person or group to another. Messages can be sent verbally, in writing, or through a gesture or look. When sent electronically, a message is sent via a computer or device like a cell phone. The person who sends the message is called the sender, and the person who receives it is called the receiver.-Aliquam erat volutpat. Integer auctor tincidunt ante, eu sodales felis semper ac.', 
     image: require('./assets/Image/Laison.png') 
   },
   { 
     id: 4, 
-    name: 'Tamsi', 
-    role: 'Lorem.', 
-    assignPart: 'UI/UX designer', 
+    name: 'Tamsi, Denmark', 
+    assignPart: 'BACK END.', 
     paragraph: 'A message is a communication or statement that is sent from one person or group to another. Messages can be sent verbally, in writing, or through a gesture or look. When sent electronically, a message is sent via a computer or device like a cell phone. The person who sends the message is called the sender, and the person who receives it is called the receiver.-Sed cursus lectus in tristique tempor. Nulla facilisi. Donec fringilla orci at urna vestibulum.', 
-    image: require('./assets/Image/Geanga.png') 
+    image: require('./assets/Image/tamsi.png') 
   },
   { 
     id: 5, 
-    name: 'Lahay Lahay', 
-    role: 'Lorem.', 
-    assignPart: 'Content creator', 
+    name: 'LahayLahay, GLyza', 
+    assignPart: 'USER INSIGHTS.', 
     paragraph: 'A message is a communication or statement that is sent from one person or group to another. Messages can be sent verbally, in writing, or through a gesture or look. When sent electronically, a message is sent via a computer or device like a cell phone. The person who sends the message is called the sender, and the person who receives it is called the receiver.-tiam eget eros arcu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia.', 
     image: require('./assets/Image/lahaylahay.png') 
   },
   { 
     id: 6, 
     name: 'Anagap, John Loyd', 
-    role: 'Assistant Designer', 
-    assignPart: 'UI/UX Principles', 
+    assignPart: 'UI/UX HEAD DESIGNER', 
     paragraph: 'A message is a communication or statement that is sent from one person or group to another. Messages can be sent verbally, in writing, or through a gesture or look. When sent electronically, a message is sent via a computer or device like a cell phone. The person who sends the message is called the sender, and the person who receives it is called the receiver.-Mauris tincidunt risus sit amet dolor blandit, sed facilisis nunc ullamcorper.', 
     image: require('./assets/Image/anagap.png') 
   },
   { 
     id: 7, 
-    name: 'Cabarrubias', 
-    role: 'Lorem', 
-    assignPart: 'Marketing strategist', 
+    name: 'Cabarrubias, Jaylene Kaye', 
+    assignPart: 'USER INSIGHTS', 
     paragraph: 'A message is a communication or statement that is sent from one person or group to another. Messages can be sent verbally, in writing, or through a gesture or look. When sent electronically, a message is sent via a computer or device like a cell phone. The person who sends the message is called the sender, and the person who receives it is called the receiver.-Donec sollicitudin lobortis odio, in eleifend nisl pellentesque a. Phasellus euismod erat id tempus.', 
-    image: require('./assets/Image/Geanga.png') 
+    image: require('./assets/Image/kaye.png') 
   },
   { 
     id: 8, 
     name: 'Del Pilar, Joselito', 
-    role: 'Tester', 
-    assignPart: 'UI/UX Principles', 
+    assignPart: 'DB ADMINISTRATOR ',  
     paragraph: 'A message is a communication or statement that is sent from one person or group to another. Messages can be sent verbally, in writing, or through a gesture or look. When sent electronically, a message is sent via a computer or device like a cell phone. The person who sends the message is called the sender, and the person who receives it is called the receiver.', 
     image: require('./assets/Image/Delpilar.png') 
   },
   { 
     id: 9, 
     name: 'Ilustrisimo, Emmanuel L.', 
-    role: 'Head Designer', 
-    assignPart: 'UI/UX Principles', 
+    assignPart: 'UI/UX/FRONT END', 
     paragraph: 'A message is a communication or statement that is sent from one person or group to another. Messages can be sent verbally, in writing, or through a gesture or look. When sent electronically, a message is sent via a computer or device like a cell phone. The person who sends the message is called the sender, and the person who receives it is called the receiver.-Duis varius orci sit amet risus facilisis, in facilisis ante cursus.', 
     image: require('./assets/Image/Ilustrisimo.png') 
   },
   { 
     id: 10, 
-    name: 'Umbay', 
-    role: 'Lorem', 
-    assignPart: 'Project management', 
+    name: 'Sir, Marjon Umbay', 
+    assignPart: 'INSTRUCTOR', 
     paragraph: 'A message is a communication or statement that is sent from one person or group to another. Messages can be sent verbally, in writing, or through a gesture or look. When sent electronically, a message is sent via a computer or device like a cell phone. The person who sends the message is called the sender, and the person who receives it is called the receiver.-Aenean eget convallis eros. Mauris tempus justo id libero mollis, a interdum orci faucibus.', 
-    image: require('./assets/Image/Geanga.png') 
+    image: require('./assets/Image/umbay.png') 
   },
 ];
 
@@ -113,7 +103,7 @@ const AboutUsScreen = () => {
             <View key={member.id} style={styles.card}>
               <Image source={member.image} style={styles.cardImage} />
               <Text style={styles.cardTitle}>{member.name}</Text>
-              <Text style={styles.cardDescription}>{member.role}</Text>
+              <Text style={styles.cardDescription}>{member.assignPart}</Text>
 
               {/* More button */}
               <TouchableOpacity
@@ -138,7 +128,7 @@ const AboutUsScreen = () => {
               <View style={styles.modalContent}>
                 <Image source={selectedMember.image} style={styles.modalImage} />
                 <Text style={styles.modalTitle}>{selectedMember.name}</Text>
-                <Text style={styles.modalRole}>{selectedMember.role}</Text>
+              
                  {/* "Assigned Part" label at the top */}
               <Text style={styles.modalAssignPart}>Assigned Part</Text>
 
@@ -233,7 +223,7 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   cardDescription: {
-    fontSize: 14,
+    fontSize: 10,
     color: '#777',
     textAlign: 'center',
     marginBottom: 10,
@@ -278,14 +268,9 @@ const styles = StyleSheet.create({
   modalTitle: {
     fontSize: 22,
     fontWeight: '700',
+    textAlign:'center',
+  },
  
-  },
-  modalRole: {
-    fontSize: 16,
-    color: '#555',
-    textAlign: 'center',
-   
-  },
   modalAssignPart: {
     fontSize: 16,
     fontWeight: '600',

@@ -25,14 +25,7 @@ const HomeScreen = ({ navigation }) => {
         
         <View style={styles.weatherInfoSection}>
           <Image source={require('./assets/bolt-isolated 2.png')} style={styles.Imagesun} />
-          <View style={styles.weatherCard}>
-            
-            <Text style={styles.temperatureText}>29°C</Text>
-            <Text style={styles.weatherConditionText}>Monday Sunny</Text>
-            
-            <Text style={styles.forecastText1}>Celcuis</Text>
           
-          </View>
         </View>
               
 
@@ -107,25 +100,18 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
   },
   weatherInfoSection: {
-    width: '100%',
-    height: 'auto',
-    backgroundColor: '#296093', 
-    borderRadius: 15,
+    
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
     padding: 5,
-    marginBottom: 30, 
-    shadowColor: '#000',        
-    shadowOffset: { width: 0, height: 10 },
-    shadowOpacity: 0.15,
-    shadowRadius: 20,
-    elevation: 5,      
+ 
+       
   },
 
   Imagesun:{
-    width: 120,  
-    height: 120,
+    width: 170,  
+    height: 170,
     marginRight: 15,
     resizeMode: 'contain', 
   },
