@@ -21,7 +21,7 @@ const LoginScreen = ({ navigation }) => {
 
     return (
         <ImageBackground
-            source={require('./assets/Image/bg_weather.png')} // Path to your bg_weather.png image
+            source={require('./assets/Image/bg_weather.png')}
             style={styles.container}
         >
             <View style={styles.container}>
