@@ -59,7 +59,7 @@ const LoginScreen = ({ navigation }) => {
                     </View>
 
                     <TouchableOpacity style={styles.Forgotpassword}>
-                        <Text style={styles.forgotpasswordRed}>Forgot Password</Text>
+                        <Text style={styles.forgotpassword}>Forgot Password</Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity style={styles.button} onPress={handleLogin}>
@@ -152,10 +152,10 @@ const styles = StyleSheet.create({
         color: '#022341',
     },
 
-    forgotpasswordRed: {
+    forgotpassword: {
         textAlign: 'right',
-        fontWeight: 500,
-        color: 'red',
+        fontWeight: "bold",
+        color: '#022341',
     },
 
     formContainer: {
