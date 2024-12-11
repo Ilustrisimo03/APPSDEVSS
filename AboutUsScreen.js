@@ -5,10 +5,10 @@ import { ScrollView, View, Text, StyleSheet, ImageBackground, Image, TouchableOp
 const teamMembers = [
   {
     id: 1,
-    name: "Genga, John Irvin C.",
-    assignPart: "PROJECT MANAGER/FRONT END",
+    name: "Geanga, John Irvin C.",
+    assignPart: "PROJECT MANAGER/BACK-END/ RELEASE MANAGER",
     paragraph:
-      "A message is a communication or statement that is sent from one person or group to another. Messages can be sent verbally, in writing, or through a gesture or look. When sent electronically, a message is sent via a computer or device like a cell phone. The person who sends the message is called the sender, and the person who receives it is called the receiver.-",
+      "As the project manager, backend developer, and release manager for our team, I ensured that the group operated efficiently and stayed on track to meet deadlines. I delegated tasks effectively, monitored progress, and maintained clear communication among all members to ensure smooth collaboration. On the backend, I developed robust solutions and managed the database, ensuring the functionality and security of our application. As the release manager, I coordinated testing, deployment, and final delivery, ensuring a seamless and timely release of the project.",
     image: require("./assets/Image/Geanga.png"),
   },
   {
@@ -75,14 +75,6 @@ const teamMembers = [
       "A message is a communication or statement that is sent from one person or group to another. Messages can be sent verbally, in writing, or through a gesture or look. When sent electronically, a message is sent via a computer or device like a cell phone. The person who sends the message is called the sender, and the person who receives it is called the receiver.-Duis varius orci sit amet risus facilisis, in facilisis ante cursus.",
     image: require("./assets/Image/Ilustrisimo.png"),
   },
-  {
-    id: 10,
-    name: "Sir, Marjon Umbay",
-    assignPart: "INSTRUCTOR",
-    paragraph:
-      "A message is a communication or statement that is sent from one person or group to another. Messages can be sent verbally, in writing, or through a gesture or look. When sent electronically, a message is sent via a computer or device like a cell phone. The person who sends the message is called the sender, and the person who receives it is called the receiver.-Aenean eget convallis eros. Mauris tempus justo id libero mollis, a interdum orci faucibus.",
-    image: require("./assets/Image/umbay.png"),
-  },
 ];
 
 const AboutUsScreen = () => {
@@ -97,13 +89,12 @@ const AboutUsScreen = () => {
   };
 
   return (
-    
-      <ImageBackground
-        source={require("./assets/Image/bg_weather.png")} // Replace with your asset path
-        style={styles.background}
-        resizeMode="cover"
-      >
-        <View style={styles.container}>
+    <ImageBackground
+      source={require("./assets/Image/bg_weather.png")} // Replace with your asset path
+      style={styles.background}
+      resizeMode="cover"
+    >
+      <View style={styles.container}>
         <ScrollView contentContainerStyle={styles.scrollViewContainer} showsVerticalScrollIndicator={false}>
           <Text style={styles.heading}>Meet Our Team</Text>
           <View style={styles.stationcontainer}>
@@ -153,9 +144,8 @@ const AboutUsScreen = () => {
             </Modal>
           )}
         </ScrollView>
-        </View>
-      </ImageBackground>
-    
+      </View>
+    </ImageBackground>
   );
 };
 
@@ -170,11 +160,11 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     padding: 20,
-
   },
   scrollViewContainer: {
     marginTop: 20,
     alignItems: "center",
+    paddingBottom: 50,
   },
   heading: {
     fontSize: 32,
@@ -190,7 +180,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff", // Adds a background color to the box
     paddingVertical: 5, // Vertical padding inside the box
     paddingHorizontal: 10, // Horizontal padding inside the box
-    borderRadius: 10, // Rounded corners for the box
+    borderRadius: 5, // Rounded corners for the box
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 10 },
     shadowOpacity: 0.15,
@@ -215,9 +205,10 @@ const styles = StyleSheet.create({
   },
   card: {
     width: "48%",
+    height: 270,
     flexDirection: "column",
     backgroundColor: "#fff",
-    borderRadius: 10,
+    borderRadius: 5,
     padding: 15,
     marginVertical: 10,
     shadowColor: "#000",
@@ -225,6 +216,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.15,
     shadowRadius: 20,
     elevation: 5,
+    position: "relative",
   },
   cardImage: {
     width: 80,
@@ -251,12 +243,14 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     paddingHorizontal: 20,
     backgroundColor: "#296093",
-    borderRadius: 10,
+    borderRadius: 5,
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 10 },
     shadowOpacity: 0.15,
     shadowRadius: 20,
     elevation: 5,
+    position: "absolute",
+    bottom: 10,
   },
   moreButtonText: {
     color: "#fff",

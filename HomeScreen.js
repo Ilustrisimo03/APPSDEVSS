@@ -1,58 +1,111 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { View, Text, TouchableOpacity, StyleSheet, Image, ScrollView, ImageBackground } from "react-native";
-import Icon from "react-native-vector-icons/Ionicons"; // For using icons
+
+import Icon from "react-native-vector-icons/MaterialIcons";
 
 const HomeScreen = ({ navigation }) => {
+  const checkSession = async () => {
+    try {
+      const userSession = await AsyncStorage.getItem("userSession");
+      if (userSession) {
+        const user = JSON.parse(userSession);
+        console.log("Logged-in user:", user);
+      }
+    } catch (error) {
+      console.error("Error retrieving session:", error);
+      navigation.navigate("Login");
+    }
+  };
+
+  useEffect(() => {
+    checkSession();
+  }, []);
+
+  // Smart Weather Station
+  const API_KEY = "AIzaSyA4cgr2YkdAgI59zQTFE3NIvTjNjjQCNB8";
+  const DATABASE_URL = "https://esp32-a7ae4-default-rtdb.asia-southeast1.firebasedatabase.app/";
+  const POLLING_INTERVAL = 2000; // 5 seconds
+
+  const [humidity, setHumidity] = useState(null);
+  const [temperature, setTemperature] = useState(null);
+  const [airQuality, setAirQuality] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`${DATABASE_URL}/SmartWeatherstation.json?auth=${API_KEY}`);
+        const data = await response.json();
+        if (data) {
+          setHumidity(data.humid);
+          setTemperature(data.temp);
+          setAirQuality(data.Air);
+        } else {
+          console.error("No data available");
+        }
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+
+    // Set up polling
+    const intervalId = setInterval(fetchData, POLLING_INTERVAL);
+
+    // Clean up interval on unmount
+    return () => clearInterval(intervalId);
+  }, []);
+
   return (
-      <ImageBackground
-        source={require("./assets/Image/bg_weather.png")} // Path to your bg_weather.png image
-        style={styles.container}
-      >
-        <View style={styles.container}>
-          {/* Scrollable Content */}
-          <ScrollView style={styles.content}>
-            {/* Header Section */}
-            <View style={styles.header}>
-              <Text style={styles.headerTitle}>Welcome, Mate!</Text>
-              <Text style={styles.subTitle}>Your daily weather forecast</Text>
-            </View>
+    <ImageBackground
+      source={require("./assets/Image/bg_weather.png")} // Path to your bg_weather.png image
+      style={styles.container}
+    >
+      <View style={styles.container}>
+        {/* Scrollable Content */}
+        <ScrollView style={styles.content}>
+          {/* Header Section */}
+          <View style={styles.header}>
+            <Text style={styles.headerTitle}>Welcome, Mate!</Text>
+            <Text style={styles.subTitle}>Your daily weather forecast</Text>
+          </View>
 
-            {/* Weather Info Section */}
+          {/* Weather Info Section */}
 
-            <View style={styles.weatherInfoSection}>
-              <Image source={require("./assets/bolt-isolated 2.png")} style={styles.Imagesun} />
-            </View>
+          <View style={styles.weatherInfoSection}>
+            <Image source={require("./assets/bolt-isolated 2.png")} style={styles.Imagesun} />
+          </View>
 
-            {/* Weather Section */}
-            <View style={styles.weatherContainer}>
-              <Text style={styles.weatherheading}>Weather</Text>
-              <View style={styles.itemRow}>
-                <View style={styles.Weather_box}>
-                  <Icon name="water" size={24} color="#00bcd4" style={styles.Icon} />
-                  <Text style={styles.dayLabel}>Humidity</Text>
-                  <View style={styles.verticalLine}></View>
-                  <Text style={styles.temperature}>69%</Text>
-                </View>
+          {/* Weather Section */}
+          <View style={styles.weatherContainer}>
+            <Text style={styles.weatherheading}>Report</Text>
+            <View style={styles.itemRow}>
+              <View style={styles.Weather_box}>
+                <Icon name="water-drop" size={24} color="#00bcd4" style={styles.Icon} />
+                <Text style={styles.dayLabel}>Humidity:</Text>
+                <View style={styles.verticalLine}></View>
+                <Text style={styles.temperature}>{humidity ?? "loading.."} %</Text>
+              </View>
 
-                <View style={styles.Weather_box}>
-                  <Icon name="thermometer" size={24} color="#FF4649" style={styles.Icon} />
-                  <Text style={styles.dayLabel}>Temperature</Text>
-                  <View style={styles.verticalLine}></View>
-                  <Text style={styles.temperature}>69°C</Text>
-                </View>
+              <View style={styles.Weather_box}>
+                <Icon name="device-thermostat" size={24} color="#FF4649" style={styles.Icon} />
+                <Text style={styles.dayLabel}>Temperature</Text>
+                <View style={styles.verticalLine}></View>
+                <Text style={styles.temperature}>{temperature ?? "loading.."} °C</Text>
+              </View>
 
-                <View style={styles.Weather_box}>
-                  <Icon name="cloud" size={24} color="#2F96F4" style={styles.Icon} />
-                  <Text style={styles.dayLabel}>Air Quality</Text>
-                  <View style={styles.verticalLine}></View>
-                  <Text style={styles.temperature}>69°C</Text>
-                </View>
+              <View style={styles.Weather_box}>
+                <Icon name="air" size={24} color="#2F96F4" style={styles.Icon} />
+                <Text style={styles.dayLabel}>Air Quality</Text>
+                <View style={styles.verticalLine}></View>
+                <Text style={styles.temperature}>{airQuality ?? "loading.."} AQI</Text>
               </View>
             </View>
-          </ScrollView>
-        </View>
-      </ImageBackground>
- 
+          </View>
+        </ScrollView>
+      </View>
+    </ImageBackground>
   );
 };
 
@@ -118,9 +171,9 @@ const styles = StyleSheet.create({
 
   // Flexbox container for the weather section
   weatherContainer: {
-    paddingHorizontal: 15,
     marginBottom: 10,
     flex: 1,
+    width: "100%",
   },
 
   // Heading for the weather section
@@ -147,7 +200,7 @@ const styles = StyleSheet.create({
     height: "80",
     backgroundColor: "#f9f9f9",
     padding: 20,
-    borderRadius: 8,
+    borderRadius: 5,
     alignItems: "center", // Center items vertically
     marginBottom: 10,
     elevation: 4,

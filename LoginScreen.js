@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { auth } from "./firebaseConfiguration";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import AsyncStorage from "@react-native-async-storage/async-storage"; // for storing user session
 import {
   View,
   Text,
@@ -13,12 +16,35 @@ import {
 import Icon from "react-native-vector-icons/MaterialIcons"; // Import MaterialIcons
 
 const LoginScreen = ({ navigation }) => {
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false); // State for toggling password visibility
 
-  const handleLogin = () => {
-    navigation.navigate("Home"); // Navigate to Home
+  const handleLogin = async () => {
+    if (email && password) {
+      setEmail("");
+      setPassword("");
+      signInWithEmailAndPassword(auth, email, password)
+        .then(async (userCredential) => {
+          const user = userCredential.user;
+
+          // Store user session data
+          try {
+            await AsyncStorage.setItem("userSession", JSON.stringify({ uid: user.uid, email: user.email }));
+            Alert.alert("Success", "User logged in successfully");
+            navigation.navigate("Home");
+          } catch (storageError) {
+            Alert.alert("Error", "Could not save session data");
+            console.error(storageError);
+          }
+        })
+        .catch((error) => {
+          Alert.alert("Error", "Invalid credentials");
+          console.error(error);
+        });
+    } else {
+      Alert.alert("Invalid", "Please enter your username and password");
+    }
   };
 
   const handleSignUp = () => {
@@ -40,8 +66,9 @@ const LoginScreen = ({ navigation }) => {
           <Text style={styles.label}>Username</Text>
           <TextInput
             placeholder="Enter your username"
-            value={username}
-            onChangeText={setUsername}
+            value={email}
+            textContentType="emailAddress"
+            onChangeText={setEmail}
             style={styles.input}
             placeholderTextColor="#AFAFAF" // Change placeholder text color
           />
