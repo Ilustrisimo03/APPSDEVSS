@@ -1,15 +1,5 @@
 import React, { useState } from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  ImageBackground,
-  Image,
-  TextInput,
-  TouchableOpacity,
-  Dimensions,
-  Alert,
-} from "react-native";
+import { View, TextInput, TouchableOpacity, Text, StyleSheet, Image, ImageBackground } from "react-native";
 import Icon from "react-native-vector-icons/MaterialIcons"; // Import MaterialIcons
 
 const LoginScreen = ({ navigation }) => {
@@ -30,8 +20,8 @@ const LoginScreen = ({ navigation }) => {
   };
 
   return (
-    <View style={styles.container}>
-      <ImageBackground source={require("./assets/Image/bg_weather.png")} style={styles.container}>
+    <ImageBackground source={require("./assets/Image/bg_weather.png")} style={styles.container}>
+      <View style={styles.container}>
         <View style={styles.Headings_container}>
           <Text style={styles.headings}>Hi, Welcome Back!</Text>
           <Text style={styles.subheadings}>Hello again, you've been missed!</Text>
@@ -60,8 +50,8 @@ const LoginScreen = ({ navigation }) => {
             </TouchableOpacity>
           </View>
 
-          <TouchableOpacity style={styles.ForgotPassword}>
-            <Text style={styles.forgotPassword}>Forgot Password?</Text>
+          <TouchableOpacity style={styles.Forgotpassword}>
+            <Text style={styles.forgotpassword}>Forgot Password</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.button} onPress={handleLogin}>
@@ -104,26 +94,19 @@ const LoginScreen = ({ navigation }) => {
             <Text style={styles.signinBlue}>Sign Up</Text>
           </TouchableOpacity>
         </View>
-      </ImageBackground>
-    </View>
+      </View>
+    </ImageBackground>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 5,
   },
-  bgImage: {
-    paddingTop: 50,
-    width: Dimensions.get("window").width,
-    height: Dimensions.get("window").height,
-    position: "absolute",
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    zIndex: -1,
-  },
+
   signinContainer: {
     flexDirection: "row",
     justifyContent: "center",
@@ -131,27 +114,25 @@ const styles = StyleSheet.create({
   },
 
   Headings_container: {
-    width: "100%",
-    marginTop: 80,
-    paddingHorizontal: 20,
+    position: "relative",
+    bottom: 120,
+    right: 25,
   },
 
   headings: {
-    fontSize: 35,
+    fontSize: 30,
     color: "#fff",
     fontWeight: 700,
   },
 
   subheadings: {
     color: "#fff",
-    fontSize: 15,
-    marginTop: 5,
+    fontSize: 13,
   },
 
   label: {
     color: "#fff",
     fontWeight: 600,
-    marginBottom: 5,
   },
 
   signin: {
@@ -160,31 +141,30 @@ const styles = StyleSheet.create({
 
   signinBlue: {
     fontWeight: "bold",
-    color: "#f8c225",
+    color: "#022341",
   },
 
-  forgotPassword: {
+  forgotpassword: {
     textAlign: "right",
     fontWeight: "bold",
-    color: "#f8c225",
-    marginVertical: 10,
+    color: "#022341",
   },
 
   formContainer: {
-    marginTop: 70,
     width: "100%",
-    paddingHorizontal: 20,
+    paddingHorizontal: 16,
+    position: "relative",
+    bottom: 80,
   },
 
   input: {
-    height: 40,
+    height: 45,
     borderColor: "#2F96F4",
     color: "Black",
     borderWidth: 1,
     marginBottom: 10,
     paddingHorizontal: 8,
-    borderRadius: 5,
-    paddingHorizontal: 10,
+    borderRadius: 10,
     backgroundColor: "#FFFFFF",
   },
 
@@ -194,24 +174,27 @@ const styles = StyleSheet.create({
 
   eyeIconContainer: {
     position: "absolute",
-    right: 5,
-    top: 3,
+    right: 10,
+    top: 6,
     padding: 5,
   },
+
   button: {
     height: 40,
     backgroundColor: "#2F96F4",
-    borderRadius: 5,
+    borderRadius: 10,
     justifyContent: "center",
     alignItems: "center",
     marginTop: 5,
     marginBottom: 0,
   },
+
   buttonText: {
     color: "white",
     fontSize: 16,
     fontWeight: "bold",
   },
+
   loginWithContainer: {
     flexDirection: "row",
     alignItems: "center",
@@ -225,13 +208,13 @@ const styles = StyleSheet.create({
     flex: 1,
     marginHorizontal: 10,
   },
-
   loginWithText: {
     fontSize: 12,
     color: "#fff",
     opacity: 0.5,
     fontWeight: "bold",
   },
+
   socialButtonContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
@@ -239,7 +222,7 @@ const styles = StyleSheet.create({
   },
   socialButton: {
     flexDirection: "row",
-    height: 40, // Height of the button
+    height: 45, // Height of the button
     backgroundColor: "#FFFFFF",
     paddingVertical: 10,
     paddingHorizontal: 15,
