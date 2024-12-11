@@ -85,7 +85,7 @@ const TabNavigator = () => {
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Login">
+      <Stack.Navigator initialRouteName="SignUp">
         {/* Loading Screen is the first screen before authentication */}
         <Stack.Screen name="Loading" component={LoadingScreen} options={{ headerShown: false }} />
         {/* Authentication screens */}

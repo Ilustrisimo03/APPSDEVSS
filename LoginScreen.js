@@ -127,9 +127,9 @@ const styles = StyleSheet.create({
   signinContainer: {
     flexDirection: "row",
     justifyContent: "center",
-    top: 170,
+    position: "relative",
+    top: 100,
   },
-
   Headings_container: {
     width: "100%",
     marginTop: 80,
@@ -141,7 +141,6 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontWeight: 700,
   },
-
   subheadings: {
     color: "#fff",
     fontSize: 15,
@@ -153,29 +152,24 @@ const styles = StyleSheet.create({
     fontWeight: 600,
     marginBottom: 5,
   },
-
   signin: {
     color: "#fff",
   },
-
   signinBlue: {
     fontWeight: "bold",
     color: "#f8c225",
   },
-
   forgotPassword: {
     textAlign: "right",
     fontWeight: "bold",
     color: "#f8c225",
     marginVertical: 10,
   },
-
   formContainer: {
     marginTop: 70,
     width: "100%",
     paddingHorizontal: 20,
   },
-
   input: {
     height: 40,
     borderColor: "#2F96F4",
@@ -187,11 +181,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     backgroundColor: "#FFFFFF",
   },
-
   passwordContainer: {
     position: "relative",
   },
-
   eyeIconContainer: {
     position: "absolute",
     right: 5,
@@ -225,7 +217,6 @@ const styles = StyleSheet.create({
     flex: 1,
     marginHorizontal: 10,
   },
-
   loginWithText: {
     fontSize: 12,
     color: "#fff",
@@ -250,7 +241,6 @@ const styles = StyleSheet.create({
     width: "48%", // Button width
     elevation: 5, // Shadow effect
   },
-
   socialButtonText: {
     color: "#000000",
     fontSize: 14,
