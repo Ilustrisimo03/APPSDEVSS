@@ -16,7 +16,7 @@ const teamMembers = [
     name: "Dinolan, Angerl O.",
     assignPart: "QUALITY ASSURANCE",
     paragraph:
-      "A message is a communication or statement that is sent from one person or group to another. Messages can be sent verbally, in writing, or through a gesture or look. When sent electronically, a message is sent via a computer or device like a cell phone. The person who sends the message is called the sender, and the person who receives it is called the receiver.-",
+      "It is my role to test and verify our app's security. To examine the app's functionality, appearance, and performance as well as to see if there are any issues with logging in. Finally, before the app is released, I have to make sure it functions properly.",
     image: require("./assets/Image/Dinolan.png"),
   },
   {
@@ -24,7 +24,7 @@ const teamMembers = [
     name: "Laison, Sean Michael Angelo",
     assignPart: "SECURITY ASSURANCE .",
     paragraph:
-      "A message is a communication or statement that is sent from one person or group to another. Messages can be sent verbally, in writing, or through a gesture or look. When sent electronically, a message is sent via a computer or device like a cell phone. The person who sends the message is called the sender, and the person who receives it is called the receiver.-Aliquam erat volutpat. Integer auctor tincidunt ante, eu sodales felis semper ac.",
+      "As a Security Specialist, my role is to ensure the project's security are aligned with the system best practices. I am responsible for identifying potential vulnerabilities, and conducting security assessments to safeguard sensitive data and assets. I help with the team for the secure system . My focus is on minimizing risks.",
     image: require("./assets/Image/Laison.png"),
   },
   {
@@ -32,7 +32,7 @@ const teamMembers = [
     name: "Tamsi, Denmark",
     assignPart: "BACK END.",
     paragraph:
-      "A message is a communication or statement that is sent from one person or group to another. Messages can be sent verbally, in writing, or through a gesture or look. When sent electronically, a message is sent via a computer or device like a cell phone. The person who sends the message is called the sender, and the person who receives it is called the receiver.-Sed cursus lectus in tristique tempor. Nulla facilisi. Donec fringilla orci at urna vestibulum.",
+      "As a back-end developer, I built and maintained server-side logic and databases, handled user authentication, ensured data security, and optimized performance. I worked closely with the front-end team for smooth integration and contributed to deployment and maintenance for seamless updates and bug fixes.",
     image: require("./assets/Image/tamsi.png"),
   },
   {
@@ -40,7 +40,7 @@ const teamMembers = [
     name: "LahayLahay, GLyza",
     assignPart: "USER INSIGHTS.",
     paragraph:
-      "A message is a communication or statement that is sent from one person or group to another. Messages can be sent verbally, in writing, or through a gesture or look. When sent electronically, a message is sent via a computer or device like a cell phone. The person who sends the message is called the sender, and the person who receives it is called the receiver.-tiam eget eros arcu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia.",
+      "My role is to understand what users need from the app. I collect feedback and use data to help make the app easier to use and more useful for checking the weather. My goal is to ensure the app fits users' needs and improves their experience.",
     image: require("./assets/Image/lahaylahay.png"),
   },
   {
@@ -48,7 +48,7 @@ const teamMembers = [
     name: "Anagap, John Loyd",
     assignPart: "UI/UX HEAD DESIGNER",
     paragraph:
-      "A message is a communication or statement that is sent from one person or group to another. Messages can be sent verbally, in writing, or through a gesture or look. When sent electronically, a message is sent via a computer or device like a cell phone. The person who sends the message is called the sender, and the person who receives it is called the receiver.-Mauris tincidunt risus sit amet dolor blandit, sed facilisis nunc ullamcorper.",
+      "As the Head of UI/UX Design, I led the design of the app's layout, ensuring it met the project goals. I worked closely with my team to make sure the design was implemented correctly. I focused on creating an intuitive and visually appealing user experience, conducting testing and gathering feedback to improve the app. I also managed a team of designers, guiding them to deliver consistent and high-quality design solutions.",
     image: require("./assets/Image/anagap.png"),
   },
   {
@@ -56,7 +56,7 @@ const teamMembers = [
     name: "Cabarrubias, Jaylene Kaye",
     assignPart: "USER INSIGHTS",
     paragraph:
-      "A message is a communication or statement that is sent from one person or group to another. Messages can be sent verbally, in writing, or through a gesture or look. When sent electronically, a message is sent via a computer or device like a cell phone. The person who sends the message is called the sender, and the person who receives it is called the receiver.-Donec sollicitudin lobortis odio, in eleifend nisl pellentesque a. Phasellus euismod erat id tempus.",
+      "As part of user insights, we check if the design or user requirements are correct and suitable for the app we develop. We also assess whether a user will like it or if changes are needed before execution.",
     image: require("./assets/Image/kaye.png"),
   },
   {
@@ -64,7 +64,7 @@ const teamMembers = [
     name: "Del Pilar, Joselito",
     assignPart: "DB ADMINISTRATOR ",
     paragraph:
-      "A message is a communication or statement that is sent from one person or group to another. Messages can be sent verbally, in writing, or through a gesture or look. When sent electronically, a message is sent via a computer or device like a cell phone. The person who sends the message is called the sender, and the person who receives it is called the receiver.",
+      "As a Database Administrator (DBA) specializing in Firebase, my primary role is to ensure the optimal performance and scalability of our database systems hosted on Firebase. I manage the backend infrastructure ensuring smooth real-time data synchronization and handling large-scale data efficiently.",
     image: require("./assets/Image/Delpilar.png"),
   },
   {
@@ -72,7 +72,7 @@ const teamMembers = [
     name: "Ilustrisimo, Emmanuel L.",
     assignPart: "UI/UX/FRONT END",
     paragraph:
-      "A message is a communication or statement that is sent from one person or group to another. Messages can be sent verbally, in writing, or through a gesture or look. When sent electronically, a message is sent via a computer or device like a cell phone. The person who sends the message is called the sender, and the person who receives it is called the receiver.-Duis varius orci sit amet risus facilisis, in facilisis ante cursus.",
+      "As a front-end developer and UI/UX designer, I worked on both the app's functionality and its design. As a UI/UX designer, I focused on creating a user-friendly and visually appealing interface. I designed the app in Figma, making sure it was easy to use and met the project requirements. I collaborated with my team to ensure the design was implemented correctly and helped optimize the app's performance for a smooth user experience across different devices.",
     image: require("./assets/Image/Ilustrisimo.png"),
   },
 ];
@@ -100,8 +100,7 @@ const AboutUsScreen = () => {
           <View style={styles.stationcontainer}>
             <Text style={styles.weatherstation}>Weather Station</Text>
             <Text style={styles.weatherdescription}>
-              A message is a communication or statement that is sent from one person or group to another. Messages can
-              be sent verbally, in writing, or t
+            Our Smart Weather Station will help you stay ready. By providing you with real-time temperature, humidity, and air quality updates, the app ensures that you're prepared for any situation that may arise throughout the day.
             </Text>
           </View>
           <View style={styles.gridContainer}>
